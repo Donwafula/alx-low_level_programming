@@ -33,5 +33,5 @@ int main(void)
 		first_num++;
 	}
 	putchar('\n');
-	return (0);
+	return (0);
 }
