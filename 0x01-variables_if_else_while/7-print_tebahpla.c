@@ -1,16 +1,13 @@
 #include <stdio.h>
 /**
  * main - Entry point
- *
- * decscription: prints lowercase alphabets in reverse
- *
- * return: Always 0
+ * decscription: prints lowercase alphabets in reverse*
+ * return: Always 0 (Success)
  */
 int main(void)
 {
-	char a;
+	int  a = 122;
 
-	a = 122;
 	while (a >= 97)
 	{
 		putchar(a);
