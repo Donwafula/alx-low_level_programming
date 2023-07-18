@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * description: prints alphabets in lower case
- * Return 0 Success
+ * Return: Always 0
  */
 void print_alphabet(void)
 {
@@ -14,5 +14,4 @@ void print_alphabet(void)
 		a++;
 	}
 	_putchar('\n');
-	return (0);
 }
