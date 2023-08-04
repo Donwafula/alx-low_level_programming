@@ -4,7 +4,7 @@
  * main - Entry point
  * @argc: argument counter
  * @argv: argument vector
- * Retun: Always 0 (Sucess)
+ * Return: Always 0 (Sucess)
  */
 
 int main(int argc, char **argv)
