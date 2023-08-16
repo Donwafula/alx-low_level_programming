@@ -1,35 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
 /**
- * main - This function we have a two number and an operator
- * @ac: Is the length of Number of arguments
- * @av: These are the arguments
- * Return: Return to 0
+ * main - operates two numbers.
+ * @argc: argument counter.
+ * @argv: argument vector.
+ * Return: result, otherwise 98 for arg error, 99 for op, error 100 for divide
+ * or multiply by 0
  */
-int main(int ac, char *av[])
+int main(int argc, char **argv)
 {
-	int numb1, numb2;
-	int (*fun)(int, int);
-	char *c = av[2];
+	int a, b, answer;
+	int (*function)(int, int);
 
-	if (ac != 4)
+	if (argc != 4)
 	{
-		printf("Error\n");
+		puts("Error");
 		exit(98);
 	}
-	if ((*c != '+' && *c != '-' && *c != '*' && *c != '/' && *c != '%') ||
-			*(c + 1) != 0)
+
+	if (argv[2][1] != '\0')
 	{
-		printf("Error\n");
+		puts("Error");
 		exit(99);
 	}
-	numb1 = atoi(av[1]);
-	numb2 = atoi(av[3]);
-	if ((*c == '/' || *c == '%') && numb2 == 0)
+
+	function = get_op_func(*(argv + 2));
+	if (!function)
 	{
-		printf("Error\n");
-		exit(100);
+		puts("Error");
+		exit(99);
 	}
-	fun = get_op_func(c);
-	printf("%d\n", fun(numb1, numb2));
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	answer = function(a, b);
+	printf("%d\n", answer);
 	return (0);
 }
