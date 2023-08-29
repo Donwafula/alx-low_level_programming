@@ -6,17 +6,17 @@
 #include <stdlib.h>
 
 /**
- * struct node - singly linked list
+ * struct list_is - singly linked list
  * str: string
  * len: len of str
  * next: points to next node
  */
 
-typedef struct node
+typedef struct list_s
 {
-	unsigned int len;
 	char *str;
-	struct node *next;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 int _putchar(char c);
 size_t print_list(const list_t *h);
