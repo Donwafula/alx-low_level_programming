@@ -1,4 +1,5 @@
 #include "lists.h"
+#include "lists.h"
 /**
  * _strlen - gets the length of a string.
  * @s: string
@@ -7,15 +8,14 @@
 
 int _strlen(const char *s)
 {
-	int l = 0;
+        int l = 0;
 
-	while (*(s + l))
-	{
-		l++;
-	}
-	return (l);
+        while (*(s + l))
+        {
+                l++;
+        }
+        return (l);
 }
-
 /**
  * add_node - adds a node at the begining of a list.
  * @head: current head address
