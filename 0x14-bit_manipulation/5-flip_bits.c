@@ -9,18 +9,15 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int b_diff, ma = 0;
-	int i, dig;
-	unsigned int dif = 0;
+	int i, c;
 
-	b_diff = n ^ m;/*1 if bit_n != bit_m (XOR)*/
-
-	for (i = 63; i >= 0; i--)
+	for (c = i = 0; i < 64; i++, c++)
 	{
-		ma = 1 << i;/*Creating a mask for extract the digit*/
-		dig = (b_diff & m) >> i;/*Extract the digit and push to 0 or 1*/
-		if (dig == 1)
-			dif++;
+		if (((n >> i) & 1) == ((m >> i) & 1))
+		{
+			c--;
+		}
 	}
-	return (dif);
+
+	return (c);
 }
