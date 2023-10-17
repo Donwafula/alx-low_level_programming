@@ -9,9 +9,14 @@
 */
 int rand(void)
 {
-	return (9); /* Replace the random number generator with the number 9*/
-}
+	static int index, numbers[] = {9, 8, 10, 24, 75, 9};
 
+	if (index < 6)
+		return (numbers[index++]);
+
+	else
+		return (1 + rand() % 15);
+}
 /**
  * init - init
  * Return: void
